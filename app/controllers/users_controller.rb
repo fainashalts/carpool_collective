@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      # redirect_to home_path
+      redirect_to :back
     else
       flash[:danger] = "Failed to sign up!"
       redirect_to root_path
