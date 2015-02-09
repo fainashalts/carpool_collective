@@ -1,0 +1,2 @@
+class CarpoolsController < ApplicationController
+end
