@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 
+  namespace :api do 
+    resources :carpools, defaults: {format: "json"}
+  end
   
 end

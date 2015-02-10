@@ -71,6 +71,7 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    geocoder (1.2.7)
     globalid (0.3.2)
       activesupport (>= 4.1.0)
     hike (1.2.3)
@@ -186,6 +187,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   factory_girl_rails
+  geocoder
   jquery-rails
   pg
   rails (= 4.2.0)
