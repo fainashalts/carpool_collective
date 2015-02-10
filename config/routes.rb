@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
 
   namespace :api do 
-    resources :carpools, defaults: {format: "json"}
+    resources :carpools, defaults: {format: :json}
   end
   
 end

@@ -39,6 +39,8 @@ gem 'angularjs-rails'
 gem 'bcrypt'
 gem 'bower-rails'
 
+gem 'responders', '~> 2.0'
+
 # factory girl allows us to create instances of our model for testing with rspec
 gem 'factory_girl_rails'
 
