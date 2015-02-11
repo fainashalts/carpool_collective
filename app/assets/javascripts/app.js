@@ -3,7 +3,6 @@
     'templates',
     'ngRoute',
     'ngResource',
-    'ngtimeago',
     'ipCookie'
     ]);
 })();

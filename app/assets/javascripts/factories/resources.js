@@ -18,7 +18,7 @@
                 }, {
                   query: {
                     method: 'GET',
-                    isArray: true
+                    // isArray: true
                   },
                   get:{
                     method: 'GET',
@@ -32,6 +32,7 @@
                     method: 'PUT',
                     params:{user_id: self.ipCookie}
                   }
+
                 });
 
 

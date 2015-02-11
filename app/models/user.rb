@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :carpools
   has_secure_password
   
   # to use this, need to add a remember_digest to user schema
