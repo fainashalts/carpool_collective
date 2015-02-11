@@ -3,12 +3,13 @@
     .module('app')
     .controller('MainController', MainController);
 
-  MainController.$inject = ['ipCookie'];
+  MainController.$inject = ['CarpoolsFactory','ipCookie'];
 
-  function MainController(ipCookie) {
+  function MainController(CarpoolsFactory, ipCookie) {
     var self= this;
 
     self.id = ipCookie('id');
+    self.Carpool = new CarpoolsFactory();
   }
 
 })();
