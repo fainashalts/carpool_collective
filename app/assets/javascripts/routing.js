@@ -8,7 +8,7 @@
     // defining our angular routes
     $routeProvider
 
-    .when('/home', {
+    .when('/', {
       title: "Carpool Collective",
       templateUrl: "index.html", 
       controller: 'MainController',
@@ -41,10 +41,10 @@
     });
 
     // to get rid of hash in url
-    $locationProvider.html5Mode({
-      enabled:true, 
-      requireBase: true
-    });
+    // $locationProvider.html5Mode({
+    //   enabled:true, 
+    //   requireBase: true
+    // });
 
   }
 

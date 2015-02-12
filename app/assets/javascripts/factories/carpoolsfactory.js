@@ -19,8 +19,11 @@
       // create a carpool object
       self.carpool = new CarpoolResource();
 
+      // self.submit = function(){
+      //   self.carpool = {name: self.name, origin_address: self.origin_address, destination_address: self.destination_address}
+      // }
       self.create = function(carpool) {
-        CarpoolResource.save(post, function(data, headers, status) {
+        CarpoolResource.save(carpool, function(data, headers, status) {
           // take carpool from array
           self.carpools.unshift(data);
           // clear the modal form
