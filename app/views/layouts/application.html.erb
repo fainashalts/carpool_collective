@@ -5,13 +5,19 @@
   <title>CarpoolCollective</title>
   <%= stylesheet_link_tag    'application' %>
   <%= javascript_include_tag 'application' %>
+  <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0" />
   <%= csrf_meta_tags %>
-</head>
-<body >
 
-<%# if logged_in? %>
- <!--  <title ng-bind= "title"></title> -->
-<%#end%>
+  <link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+<% if logged_in? %>
+  <title ng-bind= "title"></title>
+<%end%>
+
+
 
 <%= yield %>
 
