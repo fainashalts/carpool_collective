@@ -5,7 +5,8 @@
 
   CarpoolsFactory.$inject = ['Resources', '$http'];
   
-  function CarpoolsFactory(Resources, $http) {
+  function CarpoolsFactory(Resources, $http){
+    
     var Carpools = function(){
       var self= this; 
 
@@ -36,7 +37,7 @@
       };
 
       // delete a carpool
-      self.destroy = function(comment, index) {
+      self.destroy = function(carpool, index) {
 
         var carpoolObj = {id: carpool};
         CarpoolResource.delete(carpoolObj);

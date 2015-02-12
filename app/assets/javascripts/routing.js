@@ -28,6 +28,13 @@
       controller: 'MainController',
       controllerAs: 'main'
     })
+
+    .when('carpools/new', {
+      title: "New",
+      templateUrl: "new.html",
+      controller: "MainController",
+      controllerAs: 'main'
+    })
     
     .otherwise({
       redirectTo: '/'
