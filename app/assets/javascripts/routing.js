@@ -2,13 +2,13 @@
   angular.module('app')
     .config(config)
     .run(run);
-
+ 
   function config($routeProvider, $locationProvider){
 
     // defining our angular routes
     $routeProvider
 
-    .when('/', {
+    .when('/home', {
       title: "Carpool Collective",
       templateUrl: "index.html", 
       controller: 'MainController',
@@ -29,7 +29,7 @@
       controllerAs: 'main'
     })
 
-    .when('carpools/new', {
+    .when('/carpools/new', {
       title: "New",
       templateUrl: "new.html",
       controller: "MainController",
