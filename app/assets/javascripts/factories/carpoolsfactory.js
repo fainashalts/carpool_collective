@@ -30,7 +30,7 @@
           carpool.name = '';
           carpool.origin_address = '';
           carpool.destination_address = '';
-          carpool.time = '';
+          // carpool.time = '';
         }).$promise.catch(function(response){
           // this fires on error
           if(response.status !== 201) {

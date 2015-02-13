@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :carpools
   has_secure_password
+
+  attr_accessor :remember_token
   
   # to use this, need to add a remember_digest to user schema
   # attr_accessor :remember_token
@@ -24,9 +26,9 @@ class User < ActiveRecord::Base
     BCrypt::Password.create(string, cost: cost)
   end
 
-  # def User.new_token
-  #   SecureRandom.urlsafe_base64
-  # end
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
 
   private 
 

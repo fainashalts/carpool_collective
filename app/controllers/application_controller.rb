@@ -5,4 +5,8 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
 
+#   def handle_options
+#     head(:ok) if request.request_method == "OPTIONS"
+# end
+
 end
