@@ -6,6 +6,7 @@
   function config($routeProvider, $locationProvider){
 
     // defining our angular routes
+ 
     $routeProvider
 
     .when('/', {
@@ -15,14 +16,21 @@
       controllerAs: 'main'
     })
 
-    .when('carpools/:id/edit', {
+    // .when('/signup',{
+    //   title: "signup",
+    //   templateUrl: "new.html.erb",
+
+
+    // } )
+
+    .when('/carpools/:id/edit', {
       title: "Edit carpool",
       templateUrl: "edit.html",
       controller: 'MainController',
       controllerAs: 'main'
     })
 
-    .when('carpools/:id/show', {
+    .when('/carpools/:id/show', {
       title: "Carpool Details",
       templateUrl: "show.html",
       controller: 'MainController',

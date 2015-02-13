@@ -2,6 +2,7 @@ module Api
   class CarpoolsController < ApplicationController
     respond_to :json
     protect_from_forgery with: :null_session
+    skip_before_filter :verify_authenticity_token, only: [:new, :create]
 
     def index
       carpools = Carpool.all
