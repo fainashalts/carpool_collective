@@ -6,8 +6,8 @@ class Carpool < ActiveRecord::Base
 
 
   def self.near_origin(search_query)
-    near(search_query, 5, 
-      order: :distance,
+    Carpool.near(search_query, 5, 
+      # order: :distance,
       latitude: :origin_latitude,
       longitude: :origin_longitude
       )
@@ -15,7 +15,7 @@ class Carpool < ActiveRecord::Base
 
   def self.near_destination(search_query)
     Carpool.near(search_query, 5, 
-      order: :distance, 
+      # order: :distance, 
       latitude: :destination_latitude, 
       longitude: :destination_longitude
       )

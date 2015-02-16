@@ -21,8 +21,10 @@
 
         
         CarpoolResource.search(carpool, function(data, headers, status){
-          // carpool.origin_address= '';
-          // carpool.destination_address='';
+          carpool.origin_address= '';
+          carpool.destination_address='';
+          self.data = data;
+          // return data;
 
         }).$promise.catch(function(response){
           if(response.status !== 201) {
