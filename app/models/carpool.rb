@@ -4,6 +4,13 @@ class Carpool < ActiveRecord::Base
   geocoded_by :destination_address, latitude: :destination_latitude, longitude: :destination_longitude
   after_validation :geocode
 
+  before_save :geocode_the_origin_address
+
+  def geocode_the_origin_address
+    coords = Geocoder.coordinates(self.origin_address)
+    self.origin_latitude = coords[0]
+    self.origin_longitude = coords[1]
+  end
 
   def self.near_origin(search_query)
     near(search_query, 5, 
