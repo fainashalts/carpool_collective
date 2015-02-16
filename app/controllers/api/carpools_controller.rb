@@ -5,7 +5,11 @@ module Api
     skip_before_filter :verify_authenticity_token, only: [:new, :create]
 
     def index
-      carpools = Carpool.all
+      # if params(search)
+        # carpools= Carpool.where(origin_address: :origin_address.near_origin, destination_address: :destination_address.near_destination)
+      # else
+        carpools = Carpool.all
+      # end
       respond_with carpools 
     end
 
@@ -44,5 +48,10 @@ module Api
     def carpool_params
       params.require(:carpool).permit(:name, :origin_latitude, :origin_longitude, :origin_address, :destination_latitude, :destination_longitude, :destination_address)
     end
+
+    def search
+      params.require(:carpool).permit(:origin_address, :destination_address)
+    end
+
   end
 end

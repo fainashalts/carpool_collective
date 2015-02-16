@@ -24,6 +24,10 @@
                     method: 'GET',
                     params:{id: self.ipCookie}
                   },
+                  search: {
+                    method: 'GET',
+                    params:{origin: self.origin_address, destination: self.destination_address}
+                  },
                   save: {
                     method: 'POST',
                     params:{user_id: self.ipCookie}
