@@ -4,6 +4,7 @@ class Carpool < ActiveRecord::Base
   geocoded_by :destination_address, latitude: :destination_latitude, longitude: :destination_longitude
   after_validation :geocode
 
+  # for geocoder to geocode the origin address as well as the destination address; otherwise it only does the last one on the list
   before_save :geocode_the_origin_address
 
   def geocode_the_origin_address

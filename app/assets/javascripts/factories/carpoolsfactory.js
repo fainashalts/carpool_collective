@@ -23,7 +23,7 @@
       //   self.carpool = {name: self.name, origin_address: self.origin_address, destination_address: self.destination_address}
       // }
       self.create = function(name, origin_address, destination_address) {
-        var carpool = { name: self.name, origin_address: self.origin_address, destination_address: self.destination_address, time: self.time}
+        var carpool = { name: self.name, origin_address: self.origin_address, destination_address: self.destination_address, time: parseInt(self.time)}
         
         console.log(carpool);
         CarpoolResource.save(carpool, function(data, headers, status) {
