@@ -48,11 +48,7 @@
       redirectTo: '/'
     });
 
-    // to get rid of hash in url
-    // $locationProvider.html5Mode({
-    //   enabled:true, 
-    //   requireBase: true
-    // });
+ 
 
   }
 
