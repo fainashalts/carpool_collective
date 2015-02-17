@@ -3,9 +3,9 @@
         .module('app')
         .factory('Resources', Resources);
 
-        Resources.$inject = ["$resource", 'ipCookie'];
+        Resources.$inject = ["$resource"];
 
-    function Resources($resource, ipCookie, type){
+    function Resources($resource, type){
 
         var Resource = function(type){
 

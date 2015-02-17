@@ -6,6 +6,7 @@ module API
     before_action :restrict_access
 
     def index
+      user = User.find_by_access_token(params[:access_token])
       if params[:origin_address]
         carpools= Carpool.locations(params[:origin_address], params[:destination_address])
       else
@@ -15,11 +16,13 @@ module API
     end
 
     def show
+      user = User.find_by_access_token(params[:access_token])
       carpool = Carpool.find(params[:id])
       respond_with carpool
     end
 
     def new
+      user = User.find_by_access_token(params[:access_token])
       carpool = Carpool.new
     end
 
@@ -34,12 +37,15 @@ module API
     end
 
     def edit
+      user = User.find_by_access_token(params[:access_token])
     end
 
     def update
+      user = User.find_by_access_token(params[:access_token])
     end
 
     def destroy
+      user = User.find_by_access_token(params[:access_token])
       carpool = Carpool.find(params[:id])
       carpool.destroy
       head 204
