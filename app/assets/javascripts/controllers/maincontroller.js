@@ -3,9 +3,9 @@
     .module('app')
     .controller('MainController', MainController);
 
-  MainController.$inject = ['CarpoolsFactory','ipCookie'];
+  MainController.$inject = ['CarpoolsFactory'];
 
-  function MainController(CarpoolsFactory, ipCookie) {
+  function MainController(CarpoolsFactory) {
     var self= this;
 
     // self.id = ipCookie('id');
