@@ -1,8 +1,14 @@
 class User < ActiveRecord::Base
-  has_many :carpools
   has_secure_password
 
-  attr_accessor :remember_token
+  has_and_belongs_to_many :carpools
+
+  has_one :api_key, dependent: :destroy
+  # could be has many- could have multiple api keys, keeping it simple for this app
+
+  before_create :create_api_key
+
+  # attr_accessor :remember_token
   
   # to use this, need to add a remember_digest to user schema
   # attr_accessor :remember_token
@@ -19,22 +25,29 @@ class User < ActiveRecord::Base
   # password validation
   validates :password, length: {minimum: 6}
 
+  def self.find_by_access_token(access_token) 
+    APIKey.find_by(access_token: access_token).user
+  end
+    
+  private
+  def create_api_key
+    self.api_key = APIKey.create
+  end
+
   # ensuring validation on user information
-  def User.digest(string)
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
+  # def User.digest(string)
+  #   cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+  #                                                 BCrypt::Engine.cost
+  #   BCrypt::Password.create(string, cost: cost)
+  # end
+
+  # def User.new_token
+  #   SecureRandom.urlsafe_base64
+  # end
+
+  def downcase_email
+    self.email = email.downcase
   end
-
-  def User.new_token
-    SecureRandom.urlsafe_base64
-  end
-
-  private 
-
-    def downcase_email
-      self.email = email.downcase
-    end
 
 
 end

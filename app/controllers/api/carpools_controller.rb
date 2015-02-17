@@ -1,8 +1,9 @@
-module Api
+module API
   class CarpoolsController < ApplicationController
     respond_to :json
     protect_from_forgery with: :null_session
-    skip_before_filter :verify_authenticity_token, only: [:new, :create]
+    # skip_before_filter :verify_authenticity_token, only: [:new, :create]
+    before_action :restrict_access
 
     def index
       if params[:origin_address]
@@ -23,11 +24,12 @@ module Api
     end
 
     def create
-      carpool = Carpool.new(carpool_params)
+      user = User.find_by_access_token(params[:access_token])
+      carpool = user.carpools.new(carpool_params)
         if carpool.save
           respond_with carpool, location: [:api, carpool]
         else
-          respond_with carpool
+          render json: {message: "there was an error saving this carpool"}, status: 422
         end
     end
 
@@ -46,7 +48,13 @@ module Api
     private
 
     def carpool_params
-      params.require(:carpool).permit(:name, :origin_latitude, :origin_longitude, :origin_address, :destination_latitude, :destination_longitude, :destination_address, :time)
+      params.require(:carpool).permit(:name, :origin_latitude, :origin_longitude, :origin_address, :destination_latitude, :destination_longitude, :destination_address, :time, :user_id, :access_token)
+    end
+
+    def restrict_access
+      api_key = APIKey.find_by(access_token: params[:access_token])
+      render plain: "You aren't authorized, buster!", status: 401 unless 
+       api_key 
     end
 
 

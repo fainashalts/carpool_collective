@@ -8,7 +8,7 @@
   function MainController(CarpoolsFactory, ipCookie) {
     var self= this;
 
-    self.id = ipCookie('id');
+    // self.id = ipCookie('id');
     self.Carpool = new CarpoolsFactory();
     
   }
