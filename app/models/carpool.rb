@@ -1,5 +1,5 @@
 class Carpool < ActiveRecord::Base
-  has_many :users
+  has_and_belongs_to_many :users
   geocoded_by :origin_address, latitude: :origin_latitude, longitude: :origin_longitude
   geocoded_by :destination_address, latitude: :destination_latitude, longitude: :destination_longitude
   after_validation :geocode

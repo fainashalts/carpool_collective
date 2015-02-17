@@ -10,11 +10,12 @@
         var Resource = function(type){
 
             var self = this;
-            self.ipCookie = ipCookie('id');             
+            var accessToken = window.sessionStorage.access_token;
+            // self.ipCookie = ipCookie('id');             
 
             self.service = 
                 $resource('/api/' + type + '/:id', {
-                    id: '@id'
+                    id: '@id', access_token: accessToken
                 }, {
                   query: {
                     method: 'GET',
@@ -22,7 +23,7 @@
                   },
                   get:{
                     method: 'GET',
-                    params:{id: self.ipCookie}
+                    // params:{id: self.ipCookie}
                   },
                   search: {
                     method: 'GET',
@@ -30,11 +31,11 @@
                   },
                   save: {
                     method: 'POST',
-                    params:{user_id: self.ipCookie}
+                    // params:{user_id: self.ipCookie}
                   },
                   update: {
                     method: 'PUT',
-                    params:{user_id: self.ipCookie}
+                    // params:{user_id: self.ipCookie}
                   }
 
                 });

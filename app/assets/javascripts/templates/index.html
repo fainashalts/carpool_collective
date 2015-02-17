@@ -1,18 +1,29 @@
+<div ng-controller="AuthenticationController as auth">
+  <!-- begin logout button -->
+  <button ng-if="auth.isAuthenticated" class="btn btn-submit" ng-click="auth.logout()">Log Out</button>
+  <!-- end logout button -->
+  <!-- begin login form -->
+  <form class="login-form" ng-submit="auth.login()" ng-if="!auth.isAuthenticated">
+    <input class="login-input" type="text" placeholder="email" ng-model="auth.email"/>
+    <input class="login-input" type="password" placeholder="password" ng-model="auth.password"/>
+    <input type="submit" value="Log In" class="btn btn-submit">
+    
+  </form>
+  <!-- end login form -->
 
+  <form ng-submit="main.Carpool.results(main.Carpool.origin_address, main.Carpool.destination_address)">
+    <input type="text" ng-model="main.Carpool.origin_address">
+    <input type="text" ng-model="main.Carpool.destination_address">
+    <input type="submit" value="submit">
+  </form>
 
-<form ng-submit="main.Carpool.results(main.Carpool.origin_address, main.Carpool.destination_address)">
-  <input type="text" ng-model="main.Carpool.origin_address">
-  <input type="text" ng-model="main.Carpool.destination_address">
-  <input type="submit" value="submit">
-</form>
+  <div>{{main.Carpool.data }}</div>
+  <!-- <div>{{main.Carpool.carpools.carpools}}</div>
+   -->
 
-<div>{{main.Carpool.data }}</div>
-<!-- <div>{{main.Carpool.carpools.carpools}}</div>
- -->
-
-<!-- <ul>
-  <li ng-repeat="carpool in Carpool">
-    {{carpool.name}}
-  </li>
-</ul> -->
-
+  <!-- <ul>
+    <li ng-repeat="carpool in Carpool">
+      {{carpool.name}}
+    </li>
+  </ul> -->
+</div>
