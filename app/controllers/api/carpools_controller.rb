@@ -46,7 +46,7 @@ module Api
     private
 
     def carpool_params
-      params.require(:carpool).permit(:name, :origin_latitude, :origin_longitude, :origin_address, :destination_latitude, :destination_longitude, :destination_address, :time)
+      params.require(:carpool).permit(:name, :origin_latitude, :origin_longitude, :origin_address, :destination_latitude, :destination_longitude, :destination_address, :time, :user_id)
     end
 
 
