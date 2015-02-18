@@ -17,7 +17,9 @@
     <input type="submit" value="submit">
   </form>
 
-  <div>{{main.Carpool.data }}</div>
+<!--   <form ng-submit="main.Carpool.data.carpools.user.addUser()"> -->
+   <div ng-repeat="carpool in main.Carpool.data.carpools"><button ng-click="carpool.addUser(auth.user)">Join This Carpool</button>{{carpool.name}}{{carpool.time}}{{carpool.origin_address}}{{carpool.destination_address}}{{carpool.users}}</div>
+ <!--  </form> -->
   <!-- <div>{{main.Carpool.carpools.carpools}}</div>
    -->
 

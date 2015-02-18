@@ -43,8 +43,19 @@ module API
     def update
       user = User.find_by_access_token(params[:access_token])
       carpool = Carpool.find(params[:id])
+      if carpool.update(carpool_params)
+        render json: carpool, status: 200
+      else
+        render json: {errors: carpool.errors}, status: 422
+      end
       # carpools_users = carpool.carpools_users.new(params[:user_id])
-      
+    end
+
+    def add_user
+      user = User.find_by_access_token(params[:access_token])
+      carpool = Carpool.find(params[:id])
+      carpool.users.join(user)
+      render json: carpool
     end
 
     def destroy

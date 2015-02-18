@@ -16,6 +16,7 @@
       // get all carpools
       self.carpools = CarpoolResource.query();
 
+      // carpool search function based on origin and destination addresses
       self.results = function(origin_address, destination_address) {
         var carpool= {origin_address: self.origin_address, destination_address: self.destination_address};
 
@@ -32,12 +33,25 @@
           }
         });
         console.log(carpool);
-      };  
-      
+      }; 
+      //end carpoool search 
+
       // create a carpool object
       self.carpool = new CarpoolResource();
 
-      
+      // add a user to carpools
+      self.addUser = function(user){
+        CarpoolResource.add(user, function(data, headers, status){
+
+        }).$promise.catch(function(response){
+          if(response.status !== 201) {
+            self.commentError = true;
+            console.log(response);
+          }
+        })
+      }
+      // end add a user to carpools
+
       self.create = function(name, origin_address, destination_address) {
 
   
@@ -60,6 +74,7 @@
           }
         });
       };
+      // end create carpool
 
       // delete a carpool
       self.destroy = function(carpool, index) {

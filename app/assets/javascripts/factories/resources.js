@@ -36,6 +36,10 @@
                   update: {
                     method: 'PUT',
                     // params:{user_id: self.ipCookie}
+                  },
+                  add: {
+                    method: 'POST',
+                    params: 'add_user'
                   }
 
                 });

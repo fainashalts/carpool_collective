@@ -14,12 +14,19 @@ angular
     self.isAuthenticated = isAuthenticated();
     self.logout = logout; 
 
+    // self.currentUser = function (user){
+    //   self.user = user;
+    //   console.log(user)
+    // }
+    
+
     function login() {
       $http.post("http://localhost:3000/api/authenticate", {email: self.email, password: self.password})
       .success(function(response){
         console.log(response);
         setAccessToken(response.access_token);
         self.isAuthenticated = isAuthenticated();
+        self.user = user;
         self.email = null;
         self.password = null;
       })
