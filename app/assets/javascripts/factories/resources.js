@@ -39,7 +39,7 @@
                   },
                   add: {
                     method: 'POST',
-                    params: 'add_user'
+                    params: 'add'
                   }
 
                 });

@@ -40,16 +40,21 @@
       self.carpool = new CarpoolResource();
 
       // add a user to carpools
-      self.addUser = function(user){
-        CarpoolResource.add(user, function(data, headers, status){
+      // self.addUser = function(user){
+      //   CarpoolResource.add(user, function(data, headers, status){
 
-        }).$promise.catch(function(response){
-          if(response.status !== 201) {
-            self.commentError = true;
-            console.log(response);
-          }
-        })
-      }
+      //   }).$promise.catch(function(response){
+      //     if(response.status !== 201) {
+      //       self.commentError = true;
+      //       console.log(response);
+      //     }
+      //   })
+      // }
+      self.addUser = function(id){
+        console.log("function called");
+        $http.post("/api/carpools/" + id + "/add", {access_token: window.sessionStorage.access_token})
+
+      };
       // end add a user to carpools
 
       self.create = function(name, origin_address, destination_address) {

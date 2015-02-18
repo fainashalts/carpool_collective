@@ -6,7 +6,7 @@ module API
     before_action :restrict_access
 
     def index
-      user = User.find_by_access_token(params[:access_token])
+      # user = User.find_by_access_token(params[:access_token])
       if params[:origin_address]
         carpools= Carpool.locations(params[:origin_address], params[:destination_address])
       else
@@ -54,7 +54,8 @@ module API
     def add_user
       user = User.find_by_access_token(params[:access_token])
       carpool = Carpool.find(params[:id])
-      carpool.users.join(user)
+      carpool.users.push(user)
+      carpool.save
       render json: carpool
     end
 
@@ -68,7 +69,7 @@ module API
     private
 
     def carpool_params
-      params.require(:carpool).permit(:name, :origin_latitude, :origin_longitude, :origin_address, :destination_latitude, :destination_longitude, :destination_address, :time, :access_token, :user_ids => [])
+      params.require(:carpool).permit(:name, :origin_latitude, :origin_longitude, :origin_address, :destination_latitude, :destination_longitude, :destination_address, :time, :access_token)
     end
 
     def restrict_access

@@ -19,7 +19,9 @@
       //create a user object
       self.user = new UserResource();
 
-      
+      self.currentUser = UserResource.get();
+
+
 
       // self.create = $http.post("/api/users", {name: self.name, email: self.email, password: self.password, password_confirmation: self.password_confirmation})
       //   .success(function(response){
