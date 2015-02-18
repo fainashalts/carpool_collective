@@ -33,6 +33,7 @@
         });
         console.log(carpool);
       };  
+      
       // create a carpool object
       self.carpool = new CarpoolResource();
 

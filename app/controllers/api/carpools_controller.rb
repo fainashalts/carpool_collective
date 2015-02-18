@@ -1,4 +1,4 @@
-module API
+module API  
   class CarpoolsController < ApplicationController
     respond_to :json
     protect_from_forgery with: :null_session
@@ -28,7 +28,7 @@ module API
 
     def create
       user = User.find_by_access_token(params[:access_token])
-      carpool = user.carpools.new(carpool_params)
+      carpool = user.carpools.create(carpool_params)
         if carpool.save
           respond_with carpool, location: [:api, carpool]
         else
@@ -42,6 +42,9 @@ module API
 
     def update
       user = User.find_by_access_token(params[:access_token])
+      carpool = Carpool.find(params[:id])
+      # carpools_users = carpool.carpools_users.new(params[:user_id])
+      
     end
 
     def destroy
@@ -54,7 +57,7 @@ module API
     private
 
     def carpool_params
-      params.require(:carpool).permit(:name, :origin_latitude, :origin_longitude, :origin_address, :destination_latitude, :destination_longitude, :destination_address, :time, :user_id, :access_token)
+      params.require(:carpool).permit(:name, :origin_latitude, :origin_longitude, :origin_address, :destination_latitude, :destination_longitude, :destination_address, :time, :access_token, :user_ids => [])
     end
 
     def restrict_access

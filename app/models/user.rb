@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }, uniqueness: {case_sensitive: false}, length: {maximum: 255}
 
   # password validation
-  validates :password, length: {minimum: 6}
+  # validates :password, length: {minimum: 6}
 
   def self.find_by_access_token(access_token) 
     APIKey.find_by(access_token: access_token).user

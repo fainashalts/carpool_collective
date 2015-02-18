@@ -3,9 +3,9 @@ angular
   .controller("AuthenticationController", AuthenticationController);
 
 
-  AuthenticationController.$inject = ["$http"];
+  AuthenticationController.$inject = ["$http", "UsersFactory"];
 
-  function AuthenticationController($http) {
+  function AuthenticationController($http, UsersFactory) {
     var self = this;
 
     self.email;
