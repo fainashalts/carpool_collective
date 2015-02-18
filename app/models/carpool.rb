@@ -31,6 +31,13 @@ class Carpool < ActiveRecord::Base
 
   def self.locations(origin, destination)
     Carpool.near_origin(origin) & Carpool.near_destination(destination)
+    # carpools.each do |c|
+    #   if c.users > 4
+    #     c.delete
+    #   end
+    # end
+    
+    # or make a new array to push into 
   end
 
   # def as_json

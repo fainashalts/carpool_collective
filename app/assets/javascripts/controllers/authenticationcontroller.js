@@ -3,9 +3,9 @@ angular
   .controller("AuthenticationController", AuthenticationController);
 
 
-  AuthenticationController.$inject = ["$http"];
+  AuthenticationController.$inject = ["$http", "UsersFactory"];
 
-  function AuthenticationController($http) {
+  function AuthenticationController($http, UsersFactory) {
     var self = this;
 
     self.email;
@@ -14,12 +14,20 @@ angular
     self.isAuthenticated = isAuthenticated();
     self.logout = logout; 
 
+    // self.currentUser = function (user){
+    //   self.user = user;
+    //   console.log(user)
+    // }
+
+
     function login() {
-      $http.post("http://localhost:3000/api/authenticate", {email: self.email, password: self.password})
+      $http.post("/api/authenticate", {email: self.email, password: self.password})
       .success(function(response){
         console.log(response);
+        // console.log(response.data.name)
         setAccessToken(response.access_token);
         self.isAuthenticated = isAuthenticated();
+     
         self.email = null;
         self.password = null;
       })

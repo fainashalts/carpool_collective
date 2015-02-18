@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   namespace :api do 
     resources :carpools, defaults: {format: :json}
+    post '/carpools/:id/add' => 'carpools#add_user'
+    resources :users, defaults: {format: :json}
     post '/authenticate' => 'authentication#sign_in'
   end
 

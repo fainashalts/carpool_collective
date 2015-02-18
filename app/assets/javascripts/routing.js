@@ -23,6 +23,13 @@
 
     // } )
 
+    .when('/users/new', {
+      title: "New User",
+      templateUrl: "newUser.html",
+      controller: "MainController",
+      controllerAs: "main"
+    })
+
     .when('/carpools/:id/edit', {
       title: "Edit carpool",
       templateUrl: "edit.html",
@@ -43,6 +50,7 @@
       controller: "MainController",
       controllerAs: 'main'
     })
+
     
     .otherwise({
       redirectTo: '/'
