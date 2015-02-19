@@ -22,19 +22,21 @@
                     isArray: true
                   },
                   get:{
-                    method: 'GET',
+                    method: 'GET'
                     // params:{id: self.ipCookie}
                   },
                   search: {
                     method: 'GET',
-                    params:{origin: self.origin_address, destination: self.destination_address}
+                    params:{origin: self.origin_address, destination: self.destination_address},
+                    isArray: true
                   },
+
                   save: {
-                    method: 'POST',
+                    method: 'POST'
                     // params:{user_id: self.ipCookie}
                   },
                   update: {
-                    method: 'PUT',
+                    method: 'PUT'
                     // params:{user_id: self.ipCookie}
                   },
                   add: {
