@@ -1,4 +1,4 @@
-module API
+module Api
 
   class AuthenticationController < ApplicationController
    protect_from_forgery with: :null_session
