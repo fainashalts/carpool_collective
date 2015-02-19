@@ -57,6 +57,24 @@
       };
       // end add a user to carpools
 
+      self.currentCarpool = null;
+      // viewCarpool();
+
+      function viewCarpool(id){
+        var token = window.sessionStorage.access_token;
+
+        $http({
+          method: 'GET',
+          url: '/api/carpool/' + id,  
+          params: {access_token: token} 
+        })
+        .success(function(data, headers, status) {
+            console.log(data);
+            console.log(token);
+            self.currentCarpool = data;
+        });
+      };
+
       self.create = function(name, origin_address, destination_address) {
 
   

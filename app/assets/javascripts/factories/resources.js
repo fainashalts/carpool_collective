@@ -19,7 +19,7 @@
                 }, {
                   query: {
                     method: 'GET',
-                    // isArray: true
+                    isArray: true
                   },
                   get:{
                     method: 'GET',

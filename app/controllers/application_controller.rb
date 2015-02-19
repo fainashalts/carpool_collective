@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
     head(:ok) if request.request_method == "OPTIONS"
   end
 
+  def default_serializer_options
+    {root: false}
+  end
+  
 end

@@ -1,2 +1,7 @@
 THIS IS ONLY THE CURRENT USER:
 {{main.User.currentUser}}
+
+<div ng-repeat="carpool in main.User.currentUser.carpools">
+{{carpool.name}}
+<button ng-click="main.Carpool.viewCarpool(carpool.id)">View Carpool</button>
+</div>

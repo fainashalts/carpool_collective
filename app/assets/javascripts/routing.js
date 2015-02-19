@@ -23,6 +23,7 @@
 
     // } )
 
+
     .when('/users/new', {
       title: "New User",
       templateUrl: "newUser.html",
@@ -46,7 +47,7 @@
       controllerAs: 'main'
     })
 
-    .when('/carpools/:id/show', {
+    .when('/carpool', {
       title: "Carpool Details",
       templateUrl: "show.html",
       controller: 'MainController',
