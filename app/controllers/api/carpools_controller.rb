@@ -79,7 +79,7 @@ module Api
     end
 
     def restrict_access
-      api_key = APIKey.find_by(access_token: params[:access_token])
+      api_key = ApiKey.find_by(access_token: params[:access_token])
       render plain: "You aren't authorized, buster!", status: 401 unless 
        api_key 
     end

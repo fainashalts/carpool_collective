@@ -50,21 +50,21 @@
       };
       // end add a user to carpools
 
-      self.currentCarpool = function(id){
-        var carpool= {id: self.id};
-        console.log(carpool);
-        CarpoolResource.get(carpool, function(data, headers, status){
+      // self.currentCarpool = function(id){
+      //   var carpool= {id: self.id};
+      //   console.log(carpool);
+      //   CarpoolResource.get(carpool, function(data, headers, status){
           
-          self.data = data;
-          // return data;
+      //     self.data = data;
+      //     // return data;
 
-        }).$promise.catch(function(response){
-          if(response.status !== 201) {
-            self.commentError = true;
-          }
-        });
-        console.log(carpool);
-      }; 
+      //   }).$promise.catch(function(response){
+      //     if(response.status !== 201) {
+      //       self.commentError = true;
+      //     }
+      //   });
+      //   console.log(carpool);
+      // }; 
       
 
       // self.currentCarpool = null;
@@ -109,25 +109,26 @@
       //   });
       // };
 
-      // self.viewCarpool = function(id){
-      //   var carpool= { id: self.id, name: self.name, origin_address: self.origin_address, destination_address: self.destination_address, time: self.time}
-      //   var token = window.sessionStorage.access_token;
-      //   $http({
-      //     method: 'GET',
-      //     url: '/api/view/' + id,
-      //     params: {access_token: token}
-      //   })
-      //   .success(function(data, headers, status){
-      //     console.log(data);
-      //     self.currentCarpool = data;
-      //   })
-      //   .$promise.catch(function(response){
-      //     // this fires on error
-      //     if(response.status !== 201) {
-      //       self.commentError = true;
-      //     }
-      //   });
-      // }
+      self.viewCarpool = function(id){
+        // var carpool= { id: self.id, name: self.name, origin_address: self.origin_address, destination_address: self.destination_address, time: self.time}
+        console.log("hooray!");
+        var token = window.sessionStorage.access_token;
+        $http({
+          method: 'GET',
+          url: '/api/view/' + id,
+          params: {access_token: token}
+        })
+        .success(function(data, headers, status){
+          console.log(data);
+          self.currentCarpool = data;
+        })
+        .$promise.catch(function(response){
+          // this fires on error
+          if(response.status !== 201) {
+            self.commentError = true;
+          }
+        });
+      }
 
       // self.viewCarpool = function(id){
       //   var carpool = { id: self.id, name: self.name, origin_address: self.origin_address, destination_address: self.destination_address, time: self.time}
