@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :users, defaults: {format: :json}
     post '/authenticate' => 'authentication#sign_in'
     get '/profile' => 'users#get_current_user'
+    get '/view/:id' => 'carpools#get_carpool'
   end
 
 

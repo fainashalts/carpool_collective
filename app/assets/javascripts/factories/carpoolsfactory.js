@@ -3,9 +3,9 @@
     .module('app')
     .factory('CarpoolsFactory', CarpoolsFactory);
 
-  CarpoolsFactory.$inject = ['Resources', '$http'];
+  CarpoolsFactory.$inject = ['Resources', '$http', '$routeParams'];
   
-  function CarpoolsFactory(Resources, $http){
+  function CarpoolsFactory(Resources, $http, $routeParams){
     
     var Carpools = function(){
       var self= this; 
@@ -15,6 +15,9 @@
 
       // get all carpools
       self.carpools = CarpoolResource.query();
+
+       // create a carpool object
+      self.carpool = new CarpoolResource();
 
       // carpool search function based on origin and destination addresses
       self.results = function(origin_address, destination_address) {
@@ -36,26 +39,110 @@
       }; 
       //end carpoool search 
 
-      // create a carpool object
-      self.carpool = new CarpoolResource();
+      
 
       // add a user to carpools
-      // self.addUser = function(user){
-      //   CarpoolResource.add(user, function(data, headers, status){
-
-      //   }).$promise.catch(function(response){
-      //     if(response.status !== 201) {
-      //       self.commentError = true;
-      //       console.log(response);
-      //     }
-      //   })
-      // }
+      
       self.addUser = function(id){
         console.log("function called");
         $http.post("/api/carpools/" + id + "/add", {access_token: window.sessionStorage.access_token})
 
       };
       // end add a user to carpools
+
+      self.currentCarpool = function(id){
+        var carpool= {id: self.id};
+        console.log(carpool);
+        CarpoolResource.get(carpool, function(data, headers, status){
+          
+          self.data = data;
+          // return data;
+
+        }).$promise.catch(function(response){
+          if(response.status !== 201) {
+            self.commentError = true;
+          }
+        });
+        console.log(carpool);
+      }; 
+      
+
+      // self.currentCarpool = null;
+      // show a specific carpool
+      // self.viewCarpool = function(id){
+      //   console.log("viewCarpool called");
+      //   var token = window.sessionStorage.access_token; 
+      //   // self.id = $routeParams.id
+      //   $http({
+      //     method: 'GET',
+      //     url: '/api/view/' + id,
+      //     params: {access_token: token}
+      //   })
+      //   .success(function(data, headers, status){
+      //     console.log(data);
+      //     self.currentCarpool = data;
+      //   });
+      // };
+
+         //   $http({
+      //     method: 'GET',
+      //     url: '/api/view/' + id,
+      //     params: {access_token: token}
+      //   })
+      
+
+      // self.currentCarpool = null;
+      // viewCarpool();
+
+      // function viewCarpool(id){
+      //   var token = window.sessionStorage.access_token;
+
+      //   $http({
+      //     method: 'GET',
+      //     url: '/api/view/' + id,  
+      //     params: {access_token: token} 
+      //   })
+      //   .success(function(data, headers, status) {
+      //       console.log(data);
+      //       console.log(token);
+      //       self.currentCarpool = data;
+      //   });
+      // };
+
+      // self.viewCarpool = function(id){
+      //   var carpool= { id: self.id, name: self.name, origin_address: self.origin_address, destination_address: self.destination_address, time: self.time}
+      //   var token = window.sessionStorage.access_token;
+      //   $http({
+      //     method: 'GET',
+      //     url: '/api/view/' + id,
+      //     params: {access_token: token}
+      //   })
+      //   .success(function(data, headers, status){
+      //     console.log(data);
+      //     self.currentCarpool = data;
+      //   })
+      //   .$promise.catch(function(response){
+      //     // this fires on error
+      //     if(response.status !== 201) {
+      //       self.commentError = true;
+      //     }
+      //   });
+      // }
+
+      // self.viewCarpool = function(id){
+      //   var carpool = { id: self.id, name: self.name, origin_address: self.origin_address, destination_address: self.destination_address, time: self.time}
+      //   console.log(carpool);
+      //   CarpoolResource.get(carpool, function(data, headers, status){
+      //     self.currentCarpool = data;
+      //     console.log(data)
+      //   })
+      //   .$promise.catch(function(response){
+      //     // this fires on error
+      //     if(response.status !== 201) {
+      //       self.commentError = true;
+      //     }
+      //   });
+      // };
 
       self.create = function(name, origin_address, destination_address) {
 

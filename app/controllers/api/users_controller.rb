@@ -17,7 +17,7 @@ module API
 
   def get_current_user
     user = User.find_by_access_token(params[:access_token])
-    render json: user
+    render json: user 
   end
 
   def new

@@ -16,13 +16,6 @@
       controllerAs: 'main'
     })
 
-    // .when('/signup',{
-    //   title: "signup",
-    //   templateUrl: "new.html.erb",
-
-
-    // } )
-
     .when('/users/new', {
       title: "New User",
       templateUrl: "newUser.html",
@@ -37,8 +30,6 @@
       controllerAs: 'main'
     })
 
-    // $routeParams service; /profile/:id
-
     .when('/carpools/:id/edit', {
       title: "Edit carpool",
       templateUrl: "edit.html",
@@ -46,7 +37,7 @@
       controllerAs: 'main'
     })
 
-    .when('/carpools/:id/show', {
+    .when('/view/:id', {
       title: "Carpool Details",
       templateUrl: "show.html",
       controller: 'MainController',

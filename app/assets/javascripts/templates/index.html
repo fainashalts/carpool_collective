@@ -21,7 +21,7 @@
   </form>
 
 <!--   <form ng-submit="main.Carpool.data.carpools.user.addUser()"> -->
-   <div ng-repeat="carpool in main.Carpool.data.carpools"><button ng-click="main.Carpool.addUser(carpool.id)">Join This Carpool</button>{{carpool.name}}{{carpool.time}}{{carpool.origin_address}}{{carpool.destination_address}}{{carpool.users}}</div>
+   <div ng-repeat="carpool in main.Carpool.data"><button ng-click="main.Carpool.addUser(carpool.id)">Join This Carpool</button>{{carpool.name}}{{carpool.time}}{{carpool.origin_address}}{{carpool.destination_address}}</div>
  <!--  </form> -->
   <!-- <div>{{main.Carpool.carpools.carpools}}</div>
    -->

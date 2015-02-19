@@ -1,4 +1,4 @@
-module API  
+module API   
   class CarpoolsController < ApplicationController
     respond_to :json
     protect_from_forgery with: :null_session
@@ -16,9 +16,15 @@ module API
     end
 
     def show
-      user = User.find_by_access_token(params[:access_token])
+      # user = User.find_by_access_token(params[:access_token])
       carpool = Carpool.find(params[:id])
       respond_with carpool
+    end
+
+    def get_carpool
+      # user = User.find_by_access_token(params[:access_token])
+      carpool = Carpool.find(params[:id])
+      render json: carpool
     end
 
     def new
