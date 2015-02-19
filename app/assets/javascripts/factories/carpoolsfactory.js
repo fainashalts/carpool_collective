@@ -3,9 +3,9 @@
     .module('app')
     .factory('CarpoolsFactory', CarpoolsFactory);
 
-  CarpoolsFactory.$inject = ['Resources', '$http', '$routeParams'];
+  CarpoolsFactory.$inject = ['Resources', '$http', '$routeParams', '$location'];
   
-  function CarpoolsFactory(Resources, $http, $routeParams){
+  function CarpoolsFactory(Resources, $http, $routeParams, $location){
     
     var Carpools = function(){
       var self= this; 
@@ -113,21 +113,24 @@
         // var carpool= { id: self.id, name: self.name, origin_address: self.origin_address, destination_address: self.destination_address, time: self.time}
         console.log("hooray!");
         var token = window.sessionStorage.access_token;
-        $http({
-          method: 'GET',
-          url: '/api/view/' + id,
-          params: {access_token: token}
-        })
-        .success(function(data, headers, status){
-          console.log(data);
-          self.currentCarpool = data;
-        })
-        .$promise.catch(function(response){
-          // this fires on error
-          if(response.status !== 201) {
-            self.commentError = true;
-          }
-        });
+        var url = $location.$$absUrl.split('/');
+        var carpool_id = url[url.length-1];
+        self.currentCarpool = CarpoolResource.get({id: carpool_id});
+        // $http({
+        //   method: 'GET',
+        //   url: '/api/view/' + id,
+        //   params: {access_token: token}
+        // })
+        // .success(function(data, headers, status){
+        //   console.log(data);
+        //   self.currentCarpool = data;
+        // })
+        // .$promise.catch(function(response){
+        //   // this fires on error
+        //   if(response.status !== 201) {
+        //     self.commentError = true;
+        //   }
+        // });
       }
 
       // self.viewCarpool = function(id){
