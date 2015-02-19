@@ -1,4 +1,4 @@
-module Api
+module API
   class UsersController < ApplicationController
     respond_to :json
     protect_from_forgery with: :null_session
