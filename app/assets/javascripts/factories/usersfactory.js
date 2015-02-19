@@ -19,7 +19,31 @@
       //create a user object
       self.user = new UserResource();
 
-      self.currentUser = UserResource.get();
+      self.currentUser = null;
+
+      getCurrentUser();
+
+      
+      function getCurrentUser() {
+        var token = window.sessionStorage.access_token;
+        
+        $http({
+            method: 'GET',
+            url: '/api/profile/',
+            params: {access_token: token} 
+          })
+          .success(function(data, headers, status) {
+            console.log(data);
+            console.log(token);
+            self.currentUser = data;
+          });
+      }
+
+
+      // self.currentUser = function(){
+      //   $http.get('/api/users/' + user.id, {user: {access_token: window.sessionStorage.access_token}})
+      // }
+
 
 
 
@@ -30,6 +54,14 @@
       //   .error(function(response){
       //     console.log(response);
       //   });
+
+      // self.getCurrentUser = function() {
+      //   var token = window.sessionStorage.access_token;
+        
+      //   user = UserResource.get({access_token: token});
+        
+      //   return user;
+      // }
 
 
       self.create = function(name, email, password, password_confirmation) {

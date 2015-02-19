@@ -4,10 +4,10 @@ class APIKey < ActiveRecord::Base
   before_create :generate_access_token
   # every time an api key tries to get created, it will go to that method
 
-  def as_json(options={})
-    super(only: :access_token)
-    # so now when this gets serialized to json the only thing it includes is that access token
-  end
+  # def as_json(options={})
+  #   super(only: :access_token)
+  #   # so now when this gets serialized to json the only thing it includes is that access token
+  # end
 
   private
 

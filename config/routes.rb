@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     post '/carpools/:id/add' => 'carpools#add_user'
     resources :users, defaults: {format: :json}
     post '/authenticate' => 'authentication#sign_in'
+    get '/profile' => 'users#get_current_user'
   end
 
 

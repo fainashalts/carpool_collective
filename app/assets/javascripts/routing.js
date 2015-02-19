@@ -30,6 +30,15 @@
       controllerAs: "main"
     })
 
+    .when('/profile', {
+      title: "Profile",
+      templateUrl: "showUser.html",
+      controller: 'MainController',
+      controllerAs: 'main'
+    })
+
+    // $routeParams service; /profile/:id
+
     .when('/carpools/:id/edit', {
       title: "Edit carpool",
       templateUrl: "edit.html",

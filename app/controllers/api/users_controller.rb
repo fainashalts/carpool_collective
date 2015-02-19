@@ -10,9 +10,14 @@ module API
   end
 
   def show
-    user = User.find_by_access_token(params[:access_token])
-    carpools = user.carpools
+    user = User.find(params[:id])
+    # carpools = user.carpools
     respond_with user
+  end
+
+  def get_current_user
+    user = User.find_by_access_token(params[:access_token])
+    render json: user
   end
 
   def new
