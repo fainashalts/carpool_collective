@@ -1,4 +1,4 @@
-class APIKey < ActiveRecord::Base
+class ApiKey < ActiveRecord::Base
   belongs_to :user
 
   before_create :generate_access_token

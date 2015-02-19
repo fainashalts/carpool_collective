@@ -26,12 +26,12 @@ class User < ActiveRecord::Base
   # validates :password, length: {minimum: 6}
 
   def self.find_by_access_token(access_token) 
-    APIKey.find_by(access_token: access_token).user
+    ApiKey.find_by(access_token: access_token).user
   end
     
   private
   def create_api_key
-    self.api_key = APIKey.create
+    self.api_key = ApiKey.create
   end
 
   # ensuring validation on user information
