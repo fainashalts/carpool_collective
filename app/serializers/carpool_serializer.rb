@@ -9,7 +9,7 @@ class CarpoolSerializer < ActiveModel::Serializer
     object.users.order("name")
   end
 
-  def num_users
+  def num_users 
     object.users.count
   end
 end

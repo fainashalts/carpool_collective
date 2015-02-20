@@ -6,8 +6,7 @@
 <div class="text-center">
  <div class="panel panel-default user-show"  ng-repeat="carpool in main.User.currentUser.carpools">
   <h3>{{carpool.name}}</h3>
-  <h3 ng-show="{{carpool.num_users>1}}">{{carpool.num_users}} carpoolers, including you</h3>
-  <h3 ng-show="{{carpool.num_users=1}}">No other users yet!</h3>
+  <h3>{{carpool.time}}</h3>
   <button><a href="#/view/{{carpool.id}}">View This Carpool</a></button>
   <button><a href="#">Leave this carpool</button></a>
 </div>
