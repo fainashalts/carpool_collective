@@ -8206,3 +8206,10 @@ input {
   margin: 100px;
   text-align: center;
 }
+
+/* line 163, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+#login-submit {
+  background-color: #651142;
+  color: #CB87AF;
+  border: solid 1px #A95486;
+}
