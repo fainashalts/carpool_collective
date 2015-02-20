@@ -44,8 +44,8 @@ gem 'bower-rails'
 
 gem 'responders', '~> 2.0'
 
-# to make precompiling for heroku deployment go more smoothly
-gem 'thin', group: :production
+# # to make precompiling for heroku deployment go more smoothly
+# gem 'thin', group: :production
 
 # factory girl allows us to create instances of our model for testing with rspec
 gem 'factory_girl_rails'
