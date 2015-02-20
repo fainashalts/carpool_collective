@@ -8042,39 +8042,40 @@ button.close {
 /* line 23, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 body {
   background-color: #A95486;
+  font-family: 'Crushed', cursive;
 }
 
-/* line 27, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 28, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 #nav-bar {
   width: 100px;
   float: left;
   padding-top: 40px;
 }
 
-/* line 33, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 34, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 #body {
   padding-top: 100px;
   text-align: center;
 }
 
-/* line 38, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 39, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 .hue {
   background-color: #651142;
   color: #CB87AF;
 }
 
-/* line 43, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 44, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 a {
   color: #CB87AF;
 }
 
-/* line 46, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 47, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 button {
   background-color: #540002;
   border: solid 1px #A95486;
 }
 
-/* line 54, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 55, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 button#logout {
   position: fixed;
   top: 124px;
@@ -8084,7 +8085,7 @@ button#logout {
   width: 73px;
 }
 
-/* line 65, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 66, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 img {
   float: right;
   position: fixed;
@@ -8094,7 +8095,7 @@ img {
   width: 100px;
 }
 
-/* line 76, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 77, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 .carpool-search {
   border: 2px solid black;
   shadow: 4px 4px 4px #aaa;
@@ -8104,19 +8105,19 @@ img {
   padding: 10px;
 }
 
-/* line 85, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 86, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 .panel.panel-default {
   text-align: center;
   width: 700px;
   margin: 20px auto;
 }
 
-/* line 92, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 93, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 .new-carpool {
   width: 200px;
 }
 
-/* line 96, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 97, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 #saved {
   padding: 40px;
   margin: 40px;
@@ -8125,7 +8126,7 @@ img {
   font-weight: bold;
 }
 
-/* line 103, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 104, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 .user-show {
   border: 2px solid black;
   shadow: 4px 4px 4px #aaa;
@@ -8135,67 +8136,70 @@ img {
   padding: 10px;
 }
 
-/* line 111, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 112, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 #show-carpool {
   text-decoration: none;
   color: white;
 }
 
-/* line 115, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 116, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 #new-link {
   padding: 20px;
   margin: 20px;
+  background-color: #651142;
+  color: #CB87AF;
 }
 
-/* line 119, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 122, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 #search-description {
   width: 600px;
   margin: 0 auto;
+  font-family: 'Crushed', cursive;
 }
 
-/* line 124, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 128, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 input {
   margin: 10px;
 }
 
-/* line 129, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 133, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 #submit-button {
   background-color: #651142;
   color: #CB87AF;
   border: solid 1px #A95486;
 }
 
-/* line 135, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 139, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 #carousel1 .nav a small {
   display: block;
 }
 
-/* line 138, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 142, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 #carousel1 .nav {
   background: #eee;
 }
 
-/* line 141, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 145, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 .nav-justified > li > a, .nav-tabs.nav-justified > li > a {
   border-radius: 0px;
 }
 
-/* line 144, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 148, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 .nav-pills > li[data-slide-to="0"].active a {
   background-color: #b4d9a7;
 }
 
-/* line 147, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 151, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 .nav-pills > li[data-slide-to="1"].active a {
   background-color: #4f77cb;
 }
 
-/* line 150, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 154, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 .nav-pills > li[data-slide-to="2"].active a {
   background-color: #d11e4f;
 }
 
-/* line 153, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
+/* line 157, /Users/fainashalts/wdi/projects/project4/carpool_collective/app/assets/stylesheets/application.css.scss */
 .carousel-font {
   font-family: 'Crushed', cursive;
   font-size: 40px;

@@ -41379,7 +41379,7 @@ angular.module("templates").run(["$templateCache", function($templateCache) {
 
 jQuery(function ($) {
         $('#carousel1').carousel({
-            interval: 2000
+            interval: 3000
         });
 
         var clickEvent = false;
