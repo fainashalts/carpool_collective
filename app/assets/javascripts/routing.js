@@ -67,4 +67,4 @@
     $rootScope.$on('$routeChangeSuccess', changeRoute);
   }
 
-})();
+}).call(this);
