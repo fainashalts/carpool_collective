@@ -1,8 +1,8 @@
-class CreateCarpools < ActiveRecord::Migration
+ class CreateCarpools < ActiveRecord::Migration
   def change
     create_table :carpools do |t|
       t.string :name
-      t.time :time
+      t.string :time
       t.string :origin_address
       t.float :origin_latitude
       t.float :origin_longitude
