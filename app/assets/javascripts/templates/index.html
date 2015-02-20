@@ -3,6 +3,8 @@
 
 
 <div ng-controller="AuthenticationController as auth">
+
+
   <!-- begin logout button -->
   <button id="logout" ng-style="{'color': '#CB87AF', 'background-color': '#651142'}" ng-if="auth.isAuthenticated" ng-click="auth.logout()">Log Out</button>
   <!-- end logout button -->
@@ -77,3 +79,52 @@
     </li>
   </ul> -->
 </div>
+
+<!-- carousel -->
+<div class="carousel-font" class="container">
+    <div id="carousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                <p>Carpool Collective: Save the environment while making new friends and making your commute more pleasant.</p>
+                <div class="carousel-caption">
+                   <!--  <h3>How It Works</h3> -->
+              <!--       <p>
+                        Search for a carpool based on your origin and destination address. Find a carpool that fits your needs and join it. Or create your own for others to join!
+                    </p> -->
+                </div>
+            </div>
+            <div class="item">
+                <p>Search for a carpool based on your origin and destination address. Find a carpool that fits your needs and join it. Or create your own for others to join!</p>
+                <div class="carousel-caption">
+                    <div class="col-lg-12 text-center v-center" style="font-size: 39pt;">
+                        <a href="#"><span class="avatar"><i class="fa fa-google-plus"></i></span></a>
+                        <a href="#"><span class="avatar"><i class="fa fa-linkedin"></i></span></a>
+                        <a href="#"><span class="avatar"><i class="fa fa-facebook"></i></span></a>
+                        <a href="#"><span class="avatar"><i class="fa fa-github"></i></span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <p>Make friends, reduce traffic, and have fun!</p> 
+                  <div class="carousel-caption">
+                    <h3>Portfolio</h3>
+                    <p>
+                        This is a list of some of the work done by the company over the past quarter. 
+                    </p>
+                </div>
+            </div>
+        </div>
+       <!--  <ul class="nav nav-pills nav-justified">
+            <li data-target="#carousel1" data-slide-to="0" class="active">
+                <a href="#">About<small>Carpool Collective</small></a>
+            </li>
+            <li data-target="#carousel1" data-slide-to="1">
+                <a href="#">Projects<small>Lorem ipsum dolor sit</small></a>
+            </li>
+            <li data-target="#carousel1" data-slide-to="2">
+                <a href="#">Portfolio<small>Lorem ipsum dolor sit</small></a>
+            </li>
+        </ul> -->
+    </div>
+</div>
+<!-- end carousel -->
