@@ -1,6 +1,7 @@
 
 <a id="logo-image" href="http://imgur.com/nzHRIRX"><img src="http://i.imgur.com/nzHRIRX.png" title="source: imgur.com" /></a>
 
+
 <div ng-controller="AuthenticationController as auth">
   <!-- begin logout button -->
   <button id="logout" ng-style="{'color': '#CB87AF', 'background-color': '#651142'}" ng-if="auth.isAuthenticated" ng-click="auth.logout()">Log Out</button>
@@ -13,6 +14,7 @@
     
   </form>
   <!-- end login form -->
+
 <!-- 
   {{main.User.currentUser}} -->
 <!--   <a href="#/profile">Profile</a>
@@ -22,7 +24,7 @@
 
   <form ng-if="auth.isAuthenticated" ng-submit="main.Carpool.results(main.Carpool.origin_address, main.Carpool.destination_address)">
     <h3 id="search-description">Search for a carpool below. Just enter the address you want to start from and the address you want to go to!</h3>
-    <input type="text" ng-model="main.Carpool.origin_address" placeholder="starting address"></br>
+    <input type="text" ng-model="main.Carpool.origin_address" placeholder="starting address">
     <input type="text" ng-model="main.Carpool.destination_address" placeholder="destination address"></br>
     <input id="submit-button" type="submit" value="submit"></br>
   </form></br>

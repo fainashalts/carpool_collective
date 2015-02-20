@@ -3,9 +3,9 @@
     .module('app')
     .factory('CarpoolsFactory', CarpoolsFactory);
 
-  CarpoolsFactory.$inject = ['Resources', '$http', '$routeParams'];
+  CarpoolsFactory.$inject = ['Resources', '$http', '$routeParams', '$location'];
   
-  function CarpoolsFactory(Resources, $http, $routeParams){
+  function CarpoolsFactory(Resources, $http, $routeParams, $location){
     
     var Carpools = function(){
       var self= this; 
