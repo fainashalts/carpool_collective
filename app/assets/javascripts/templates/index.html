@@ -1,9 +1,12 @@
+
+<a id="logo-image" href="http://imgur.com/nzHRIRX"><img src="http://i.imgur.com/nzHRIRX.png" title="source: imgur.com" /></a>
+
 <div ng-controller="AuthenticationController as auth">
   <!-- begin logout button -->
-  <button ng-if="auth.isAuthenticated" class="btn btn-submit" ng-click="auth.logout()">Log Out</button>
+  <button id="logout" ng-style="{'color': '#CB87AF', 'background-color': '#651142'}" ng-if="auth.isAuthenticated" ng-click="auth.logout()">Log Out</button>
   <!-- end logout button -->
   <!-- begin login form -->
-  <form class="login-form" ng-submit="auth.login()" ng-if="!auth.isAuthenticated">
+  <form ng-submit="auth.login()" ng-if="!auth.isAuthenticated">
     <input class="login-input" type="text" placeholder="email" ng-model="auth.email"/>
     <input class="login-input" type="password" placeholder="password" ng-model="auth.password"/>
     <input type="submit" value="Log In" class="btn btn-submit">
@@ -12,16 +15,57 @@
   <!-- end login form -->
 <!-- 
   {{main.User.currentUser}} -->
-  <a href="#/profile">Profile</a>
+<!--   <a href="#/profile">Profile</a>
+ -->
 
-  <form ng-submit="main.Carpool.results(main.Carpool.origin_address, main.Carpool.destination_address)">
-    <input type="text" ng-model="main.Carpool.origin_address">
-    <input type="text" ng-model="main.Carpool.destination_address">
-    <input type="submit" value="submit">
-  </form>
+  
+
+  <form ng-if="auth.isAuthenticated" ng-submit="main.Carpool.results(main.Carpool.origin_address, main.Carpool.destination_address)">
+    <h3 id="search-description">Search for a carpool below. Just enter the address you want to start from and the address you want to go to!</h3>
+    <input type="text" ng-model="main.Carpool.origin_address" placeholder="starting address"></br>
+    <input type="text" ng-model="main.Carpool.destination_address" placeholder="destination address"></br>
+    <input id="submit-button" type="submit" value="submit"></br>
+  </form></br>
+  <button id="new-link" ng-if="auth.isAuthenticated"><a href="#/carpools/new">Create New Carpool</a></button>
 
 <!--   <form ng-submit="main.Carpool.data.carpools.user.addUser()"> -->
-   <div ng-repeat="carpool in main.Carpool.data"><button ng-click="main.Carpool.addUser(carpool.id)">Join This Carpool</button>{{carpool.name}}{{carpool.time}}{{carpool.origin_address}}{{carpool.destination_address}}</div>
+<!-- <div class="container">
+  <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+    
+    <div class="carousel-inner">
+      <div ng-class="{active:!$index}" ng-repeat="carpool in main.Carpool.data track by $index">
+        <h1> {{carpool.name}} </h1>
+        <h2>{{carpool.time}}</h2>
+        <p>{{carpool.origin_address}}</p>
+        <p>{{carpool.destination_address}}</p>
+      </div> -->
+<!--     <a class="carousel-control-left" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="carousel-control-right" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a> -->
+  </div>
+</div>
+</div>
+
+</div>
+
+
+  <div class="text-center">
+   <div class="panel panel-default carpool-search" ng-show="carpool.num_users < 5" ng-repeat="carpool in main.Carpool.data">
+
+    <h1>{{carpool.name}}</h1>
+    <h2> {{carpool.time}}</h2>
+    <p><strong>Leaves From:</strong></br> {{carpool.origin_address}}</p>
+    <p><strong>Goes To: </strong></br>{{carpool.destination_address}}</p>
+    <p><strong>Number of Carpoolers:</strong></br> {{carpool.num_users}}</p>
+
+   <button class="btn btn-large" ng-style="{'color': '#70A897', 'background-color': '#25703A'}" ng-click="main.Carpool.addUser(carpool.id)">Join</button></div></br>
+  </div>
+
+  
+
  <!--  </form> -->
   <!-- <div>{{main.Carpool.carpools.carpools}}</div>
    -->
@@ -32,5 +76,3 @@
     </li>
   </ul> -->
 </div>
-
-

@@ -1,5 +1,5 @@
 class CarpoolSerializer < ActiveModel::Serializer
-  attributes :id, :name, :time, :origin_address, :destination_address, :users
+  attributes :id, :name, :time, :origin_address, :destination_address, :users, :num_users
 
   has_one :name, root: :name
 
@@ -7,5 +7,9 @@ class CarpoolSerializer < ActiveModel::Serializer
 
   def users
     object.users.order("name")
+  end
+
+  def num_users
+    object.users.count
   end
 end

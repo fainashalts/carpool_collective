@@ -16,3 +16,117 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+// <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Font+Name">
+body {
+  background-color: #A95486;
+
+}
+#nav-bar{
+  width: 100px;
+  float: left;
+  padding-top: 40px;
+}
+
+#body {
+  padding-top: 100px;
+  text-align: center;
+}
+
+.hue {
+  background-color: #651142;
+  color: #CB87AF;
+}
+
+a {
+  color: #CB87AF;
+}
+button {
+  background-color: #540002;
+  border: solid 1px #A95486;
+}
+// #button-id {
+//   background-color: #540002;
+//   border: solid 1px #D3696C;
+// }
+button#logout {
+  // float: right;
+  position: fixed;
+  top: 124px;
+  left: 14px;
+  // margin-top: 110px;
+  display: inline-block;
+  height: 40px;
+  width: 73px;
+}
+
+img {
+  float: right;
+  position: fixed;
+  top: 35px;
+  right: 15px;
+  height: 100px;
+  width: 100px;
+
+}
+
+
+.carpool-search {
+  border: 2px solid black; 
+  shadow: 4px 4px 4px #aaa;
+  width: 600px;
+  margin: 20px;
+  background-color: #CB87AF;
+  padding: 10px;
+}
+
+.panel.panel-default {
+  text-align: center;
+  // margin: 0 auto;
+  width: 700px;
+  margin: 20px auto;
+}
+
+.new-carpool {
+  width: 200px;
+}
+
+#saved {
+  padding: 40px;
+  margin: 40px;
+  font-size: 50px;
+  color: green;
+  font-weight: bold;
+}
+.user-show {
+  border: 2px solid black; 
+  shadow: 4px 4px 4px #aaa;
+  width: 600px;
+  margin: 20px;
+  background-color: #CB87AF;
+  padding: 10px;
+}
+#show-carpool {
+  text-decoration: none;
+  color: white;
+}
+#new-link {
+  padding: 20px;
+  margin: 20px;
+}
+#search-description {
+  width: 600px;
+  margin: 0 auto;
+}
+
+input {
+
+  margin: 10px;
+}
+
+#submit-button {
+  background-color: #651142;
+  color: #CB87AF;
+  border: solid 1px #A95486;
+}

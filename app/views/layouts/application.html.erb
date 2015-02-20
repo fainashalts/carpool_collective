@@ -7,6 +7,7 @@
   <%= javascript_include_tag 'application' %>
   <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0" />
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
 
   <link href='http://fonts.googleapis.com/css?family=Muli:300,400' rel='stylesheet' type='text/css'>
 </head>
@@ -20,8 +21,23 @@
 <%#end%>
 
 
+<div id="nav-bar" class="container" role="navigation">
+  <ul class="nav nav-pills nav-stacked span2">
+  <li role="presentation" class="hue"><a href="#/">Home</a></li>
+  <li role="presentation" class="hue"><a href="#/profile">Profile</a></li>
+  <li role="presentation" class="hue" ng-if="auth.isAuthenticated" ng-click="auth.logout()"><a href="#/"></button>Logout</a></li>
+  <button ng-style="{'color': '#CB87AF', 'background-color': '#651142'}" ng-if="auth.isAuthenticated" ng-click="auth.logout()">Log Out</button>
+  </ul>
+<!-- <span class="glyphicon glyphicon-home btn-success btn-lg"><a href="#/"></a></span>
+<span class="glyphicon glyphicon-user btn btn-success btn-lg"><a href="#/profile"></a></span> -->
+</div>
 
-<%= yield %>
+<div id="body" class="container">
+  <div class="row">
+
+    <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>

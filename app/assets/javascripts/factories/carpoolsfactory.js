@@ -30,6 +30,7 @@
           self.data = data;
           // return data;
 
+
         }).$promise.catch(function(response){
           if(response.status !== 201) {
             self.commentError = true;
@@ -162,11 +163,14 @@
           carpool.origin_address = '';
           carpool.destination_address = '';
           // carpool.time = '';
+          document.getElementById('saved').innerHTML= 'Your carpool was successfully saved! It can be seen in your profile!'
+          self.saved = saved;
           
         }).$promise.catch(function(response){
           // this fires on error
           if(response.status !== 201) {
             self.commentError = true;
+            window.alert("There was an error savng your carpool. Please try again")
           }
         });
       };
