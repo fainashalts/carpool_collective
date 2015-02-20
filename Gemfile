@@ -50,6 +50,9 @@ gem 'responders', '~> 2.0'
 # factory girl allows us to create instances of our model for testing with rspec
 gem 'factory_girl_rails'
 
+gem 'rspec_junit_formatter', :github => 'circleci/rspec_junit_formatter', group: :test
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
