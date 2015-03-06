@@ -28,6 +28,20 @@
       //     url:'/api/view/'+ self.carpool_id + '/comments'
       //   })
       // }
+      self.getComments = function(carpool_id){
+
+        var url = $location.$$absUrl.split('/');
+        self.carpool_id = url[url.length-1];
+
+        var token = window.sessionStorage.access_token
+        
+        $http({
+          method: 'GET',
+          url: '/api/carpools/' + self.carpool_id,
+          params: {access_token: token}
+        })
+
+      }
       self.create = function(carpool_id, username, message) {
         
         var url = $location.$$absUrl.split('/');

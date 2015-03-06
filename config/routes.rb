@@ -23,8 +23,8 @@ Rails.application.routes.draw do
     post '/authenticate' => 'authentication#sign_in'
     get '/profile' => 'users#get_current_user'
     post '/carpools/:id/comments' => 'comments#create'
-    # get '/view/:id/comments' => 'comments#index'
-
+    # get '/carpools/:id/comments' => 'comments#index'
+    
   
   end
 
