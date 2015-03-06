@@ -17,13 +17,22 @@
     </div>
 
   </div>
-</div>
+
 
 
 <div>
+  <div>
+  <h3>Messages in this Carpool</h3>
+  <ul ng-repeat="comment in main.Carpool.currentCarpool.comments">
+    <li>{{comment.username}}--{{comment.message}}</li>
+  </ul>
+  <button ng-click="main.Comment.comment">Refresh Comments</button>
+  </div>
+
   <form ng-submit="main.Comment.create(main.Comment.username, main.Comment.message)">
     <input type="text" ng-model="main.Comment.username" placeholder="username">
     <input type="text" ng-model= "main.Comment.message" placeholder="your message">
     <input type="submit" value="submit">
   </form>
+</div>
 </div>

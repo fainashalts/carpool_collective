@@ -3,7 +3,8 @@ module Api
     respond_to :json
     protect_from_forgery with: :null_session
 
-    before_action :restrict_access
+    # before_action :restrict_access
+    skip_before_filter :verify_authenticity_token
 
     def index
       carpool = Carpool.find(params[:id])
@@ -19,10 +20,10 @@ module Api
     end
 
     def create
-      user = User.find_by_access_token(params[:access_token])
-      # carpool = Carpool.find(params[:id])
+      # user = User.find_by_access_token(params[:access_token])
+      carpool = Carpool.find(params[:id])
       # comment = carpool.comments.create(comment_params)
-      comment = Comment.new(comment_params)
+      comment = carpool.comments.new(comment_params)
       if comment.save
         render json: comment
       end
@@ -30,14 +31,14 @@ module Api
   
     private
     def comment_params
-      params.permit(:username, :carpool_id, :message, :carpool)
+      params.permit(:comment, :username, :message, :carpool_id, carpools: :id)
     end
 
-    def restrict_access
-      api_key = ApiKey.find_by(access_token: params[:access_token])
-      render plain: "You aren't authorized, buster!", status: 401 unless 
-       api_key 
-    end
+    # def restrict_access
+    #   api_key = ApiKey.find_by(access_token: params[:access_token])
+    #   render plain: "You aren't authorized, buster!", status: 401 unless 
+    #    api_key 
+    # end
 
   end
 end

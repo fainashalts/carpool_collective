@@ -12,19 +12,37 @@
 
       var CommentResource = new Resources('comments');
 
-      self.comments = CommentResource.query();
-
       self.comment = new CommentResource();
 
-      self.create = function(id, username, message) {
+      // self.comments = CommentResource.query();
+
+      // getComments();
+
+      // function getComments(){
+      //   var token = window.sessionStorage.access_token;
+      //   var url = $location.$$absUrl.split('/');
+      //   self.carpool_id = url[url.length-1];
+
+      //   $http({
+      //     method: 'GET'
+      //     url:'/api/view/'+ self.carpool_id + '/comments'
+      //   })
+      // }
+      self.create = function(carpool_id, username, message) {
         
         var url = $location.$$absUrl.split('/');
         self.carpool_id = url[url.length-1];
 
-        var comment = { id: self.carpool_id, username: self.username, message: self.message };
+        var message = {carpool_id: self.carpool_id, username: self.username, message: self.message};
 
-        console.log("new comment" + comment);
-        $http.post("/api/carpools/" + id + "/comments", {access_token: window.sessionStorage.access_token})
+        
+        $http.post("/api/carpools/" + self.carpool_id + '/comments', {username: self.username, message: self.message})
+
+        console.log("new comment" + message.username + " " + message.message);
+
+        self.username = "";
+        self.message = "";
+
 
         // CommentResource.save(comment, function(data, headers, status){
         //   comment.carpool_id = '';

@@ -1,5 +1,7 @@
 class Carpool < ActiveRecord::Base
   has_and_belongs_to_many :users
+  has_many :comments, inverse_of: :carpool
+  accepts_nested_attributes_for :comments
   geocoded_by :origin_address, latitude: :origin_latitude, longitude: :origin_longitude
   geocoded_by :destination_address, latitude: :destination_latitude, longitude: :destination_longitude
   after_validation :geocode
