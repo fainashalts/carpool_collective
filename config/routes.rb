@@ -22,6 +22,9 @@ Rails.application.routes.draw do
     resources :users, defaults: {format: :json}
     post '/authenticate' => 'authentication#sign_in'
     get '/profile' => 'users#get_current_user'
+    post '/carpools/:id/comments' => 'comments#create'
+    # get '/carpools/:id/comments' => 'comments#index'
+    
   
   end
 
