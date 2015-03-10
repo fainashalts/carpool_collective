@@ -3,9 +3,9 @@
     .module('app')
     .factory('UsersFactory', UsersFactory);
 
-  UsersFactory.$inject = ['Resources', '$http'];
+  UsersFactory.$inject = ['Resources', '$http', '$location'];
 
-  function UsersFactory(Resources, $http){
+  function UsersFactory(Resources, $http, $location){
     
     var Users = function(){
       var self= this;
@@ -64,9 +64,9 @@
       // }
 
 
-      self.create = function(name, email, password, password_confirmation) {
+      self.create = function(name, email, origin_address, destination_address, password, password_confirmation) {
 
-        var user = { user: { name: self.name, email: self.email, password: self.password, password_confirmation: self.password_confirmation } };
+        var user = { user: { name: self.name, email: self.email, origin_address: self.origin_address, destination_address: self.destination_address, password: self.password, password_confirmation: self.password_confirmation } };
 
         console.log("New User " + user);
         UserResource.save(user, function(data, headers, status){
@@ -74,6 +74,9 @@
           user.email = '';
           user.password = '';
           user.password_confirmation= '';
+          $location.path();
+          $location.path('/');
+
         }).$promise.catch(function(response){
           if(response.status !== 201) {
             self.commentError = true; 

@@ -21,7 +21,7 @@
 
 </head>
 
-<body>
+<body ng-controller="AuthenticationController as auth">
 
 <!-- <base href="/">  -->
 
@@ -30,11 +30,11 @@
 <%#end%>
 
 
-<div ng-controller="AuthenticationController as auth" id="nav-bar" class="container" role="navigation">
+<div id="nav-bar" class="container" role="navigation">
   <ul class="nav nav-pills nav-stacked span2">
-  <li role="presentation" class="hue"><a href="#/">Home</a></li>
-  <li role="presentation" class="hue"><a href="#/profile">Profile</a></li>
-  <li role="presentation" class="hue" ng-if="auth.isAuthenticated" ng-click="auth.logout()"><a href="#/">Logout</a></li>
+  <li role="presentation" class="hue" ng-if="auth.isAuthenticated"><a href="#/">Home</a></li>
+  <li role="presentation" class="hue" ng-if="auth.isAuthenticated"><a href="#/profile">Profile</a></li>
+  <li role="presentation" class="hue" ng-if="auth.isAuthenticated" ng-click="auth.logout()"><a href="#/logout">Logout</a></li>
  <!--  <button ng-style="{'color': '#CB87AF', 'background-color': '#651142'}" ng-if="auth.isAuthenticated" ng-click="auth.logout()">Log Out</button> -->
   </ul>
 <!-- <span class="glyphicon glyphicon-home btn-success btn-lg"><a href="#/"></a></span>

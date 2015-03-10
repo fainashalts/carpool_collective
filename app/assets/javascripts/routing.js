@@ -41,7 +41,7 @@
       title: "Carpool Details",
       templateUrl: "show.html",
       controller: 'MainController',
-      controllerAs: 'main'
+      controllerAs: 'main',
     })
             
     .when('/carpools/new', {
@@ -51,10 +51,17 @@
       controllerAs: 'main'
     })
 
-    
+    .when('/logout', {
+      title: "Logout",
+      templateUrl: "logout.html",
+      controller: "MainController",
+      controllerAs: 'main'
+    })
+
     .otherwise({
       redirectTo: '/'
     });
+
 
  
 

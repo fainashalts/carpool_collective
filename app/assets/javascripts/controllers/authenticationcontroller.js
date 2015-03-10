@@ -13,18 +13,14 @@ angular
     self.login = login;
     self.isAuthenticated = isAuthenticated();
     self.logout = logout; 
-
-    // self.currentUser = function (user){
-    //   self.user = user;
-    //   console.log(user)
-    // }
+    self.User = new UsersFactory();
 
 
     function login() {
+      
       $http.post("/api/authenticate", {email: self.email, password: self.password})
       .success(function(response){
         console.log(response);
-        // console.log(response.data.name)
         setAccessToken(response.access_token);
         self.isAuthenticated = isAuthenticated();
      
@@ -33,13 +29,11 @@ angular
       })
       .error(function(response){
         console.log(response);
-        // this is where you would put error handling
       })
     }
 
     function logout() {
       window.sessionStorage.clear();
-      // could also remove a specific item from your Session Storage
       self.isAuthenticated = isAuthenticated();
     }
 

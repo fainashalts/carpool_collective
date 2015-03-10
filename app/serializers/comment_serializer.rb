@@ -1,6 +1,6 @@
 class CommentSerializer < ActiveModel::Serializer
 
-attributes :id, :carpool_id, :username, :message
+attributes :id, :created_at, :carpool_id, :username, :message
 
 # has_one :id, root: :id
 

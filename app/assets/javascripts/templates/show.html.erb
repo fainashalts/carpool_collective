@@ -1,19 +1,21 @@
-<h1 id="view">Your Carpool Collective Carpool!</h1>
+<h1>Your Carpool Collective Carpool!</h1>
 
 
 
 
-<div ng-show="main.Carpool.currentCarpool.origin_address" class="text-center">
+<div class="text-center">
   <div id="carpool-show" class="col-md-4 panel panel-default carpool-search">
     <h1><strong>{{main.Carpool.currentCarpool.name}}</strong></h1>
     <h2>{{main.Carpool.currentCarpool.time}}</h2>
-    <h3 ng-show="main.Carpool.currentCarpool.origin_address">Leaving From: {{main.Carpool.currentCarpool.origin_address}}</h3>
-    <h3 ng-show="main.Carpool.currentCarpool.origin_address">Going to: {{main.Carpool.currentCarpool.destination_address}}</h3>
-    <h2 ng-show="main.Carpool.currentCarpool.origin_address"><strong>Carpoolers<strong></h2>
+    <h3> Leaving From: {{main.Carpool.currentCarpool.origin_address}}</h3>
+    <h3> Going to: {{main.Carpool.currentCarpool.destination_address}}</h3>
+    <h2 <strong>Carpoolers<strong></h2>
     <div ng-repeat="user in main.Carpool.currentCarpool.users">
 
       <h3>Name: {{user.name}}</h3>
       <h3>Email: {{user.email}}</h3>
+      <h3>Leaving From: {{user.origin_address}}</h3>
+      <h3>Going To: {{user.destination_address}}</h3>
     </div>
 
   </div>
@@ -24,7 +26,7 @@
   <div>
   <h2>Messages in this Carpool</h2>
   <ul ng-repeat="comment in main.Carpool.currentCarpool.comments">
-    <li class="text-left"><strong id="username">{{comment.username}}</strong>--{{comment.message}}</li>
+    <li class="text-left"><strong id="username">{{comment.username}}</strong>: {{comment.message}}</li>
   </ul>
   <!-- <button ng-click="main.Comment.getComments()">Refresh Comments</button> -->
 <!--   <div ng-if="main.Comment.getComments"

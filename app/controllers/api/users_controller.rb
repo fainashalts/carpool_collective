@@ -52,7 +52,7 @@ module Api
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :img, :carpool_ids => [])
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :img, :origin_address, :origin_latitude, :origin_longitude, :destination_address, :destination_latitude, :destination_longitude, :carpool_ids => [])
   end
 
   end #end of UsersController class

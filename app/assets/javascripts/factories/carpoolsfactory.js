@@ -139,6 +139,7 @@
         //   }
         // });
       }
+      self.viewCarpool();
 
       // self.viewCarpool = function(id){
       //   var carpool = { id: self.id, name: self.name, origin_address: self.origin_address, destination_address: self.destination_address, time: self.time}

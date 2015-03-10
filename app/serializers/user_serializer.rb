@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :email, :img, :carpools, :num_carpools
+  attributes :id, :name, :email, :img, :carpools, :num_carpools, :origin_address, :destination_address
 
   # has_many :carpools
 
