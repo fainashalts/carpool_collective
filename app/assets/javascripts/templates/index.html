@@ -14,7 +14,7 @@
     <input class="login-input" type="password" placeholder="password" ng-model="auth.password"/></br>
     <input id="login-submit" type="submit" value="Log In" class="btn btn-submit">
   </form>
-  <button ng-if="!auth.isAuthenticated"><a href="#/users/new">Sign Up</a></button>
+   <a id="sign-up" ng-if="!auth.isAuthenticated" href="#/users/new">Sign Up</a>
   <!-- end login form -->
 <!-- 
   {{main.User.currentUser}} -->

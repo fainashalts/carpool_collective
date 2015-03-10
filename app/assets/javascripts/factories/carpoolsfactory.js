@@ -48,7 +48,8 @@
       self.addUser = function(id){
         console.log("function called");
         $http.post("/api/carpools/" + id + "/add", {access_token: window.sessionStorage.access_token})
-
+        $location.path();
+        $location.path('/profile');
       };
 
       self.removeUser = function(id){
