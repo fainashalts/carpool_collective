@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     get '/view/:id' => 'carpools#get_carpool'
     resources :carpools, defaults: {format: :json}
     post '/carpools/:id/add' => 'carpools#add_user'
+    post '/carpools/:id/delete' => 'carpools#remove_user'
     resources :users, defaults: {format: :json}
     post '/authenticate' => 'authentication#sign_in'
     get '/profile' => 'users#get_current_user'

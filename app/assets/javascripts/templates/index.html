@@ -6,7 +6,7 @@
 
 
   <!-- begin logout button -->
-  <button id="logout" ng-style="{'color': '#CB87AF', 'background-color': '#651142'}" ng-if="auth.isAuthenticated" ng-click="auth.logout()">Log Out</button>
+  <!-- <button id="logout" ng-style="{'color': '#CB87AF', 'background-color': '#651142'}" ng-if="auth.isAuthenticated" ng-click="auth.logout()">Log Out</button> -->
   <!-- end logout button -->
   <!-- begin login form -->
   <form ng-submit="auth.login()" ng-if="!auth.isAuthenticated">
@@ -15,7 +15,6 @@
     <input id="login-submit" type="submit" value="Log In" class="btn btn-submit">
   </form>
   <!-- end login form -->
-  <p ng-if="!main.Carpool.results">No Carpools match your search! Create your own carpoool instead!</p>
 <!-- 
   {{main.User.currentUser}} -->
 <!--   <a href="#/profile">Profile</a>
@@ -30,7 +29,7 @@
     <input id="submit-button" type="submit" value="submit"></br>
   </form></br>
   <button id="new-link" ng-if="auth.isAuthenticated"><a href="#/carpools/new">Create New Carpool</a></button>
-
+  <h2 ng-if="main.Carpool.data.length == 0">No Carpools match your search! Create your own carpool instead by clicking the link above!</h>
 <!--   <form ng-submit="main.Carpool.data.carpools.user.addUser()"> -->
 <!-- <div class="container">
   <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
@@ -107,10 +106,6 @@
             <div class="item">
                 <p>Make friends, reduce traffic, and have fun!</p> 
                   <div class="carousel-caption">
-                    <h3>Portfolio</h3>
-                    <p>
-                        This is a list of some of the work done by the company over the past quarter. 
-                    </p>
                 </div>
             </div>
         </div>

@@ -65,6 +65,14 @@ module Api
       render json: carpool
     end
 
+    def remove_user
+      user = User.find_by_access_token(params[:access_token])
+      carpool = Carpool.find(params[:id])
+      carpool.users.delete(user)
+      carpool.save
+      render json: carpool
+    end
+
     def destroy
       user = User.find_by_access_token(params[:access_token])
       carpool = Carpool.find(params[:id])

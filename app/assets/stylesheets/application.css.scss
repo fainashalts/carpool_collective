@@ -19,11 +19,18 @@
 
 
 // <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Font+Name">
+html {
+  min-height: 100%;
+}
 body {
-  background-color: #A95486;
+  // background-color: #A95486;
+  background-image: radial-gradient(pink, #A95486);
+  width: 100%;
   font-family: 'Crushed', cursive;
+  font-size: 18px;
 
 }
+
 #nav-bar{
   width: 100px;
   float: left;
@@ -46,6 +53,7 @@ a {
 button {
   background-color: #540002;
   border: solid 1px #A95486;
+  color: white;
 }
 // #button-id {
 //   background-color: #540002;
@@ -54,12 +62,12 @@ button {
 button#logout {
   // float: right;
   position: fixed;
-  top: 124px;
+  top: 128px;
   left: 14px;
   // margin-top: 110px;
   display: inline-block;
   height: 40px;
-  width: 73px;
+  width: 71px;
 }
 
 img {
@@ -163,5 +171,39 @@ input {
   background-color: #651142;
   color: #CB87AF;
   border: solid 1px #A95486;
+}
+#carpool-show {
+  float: left;
+  vertical-align: top;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+#google-map {
+  float: left;
+  border: solid 1px black;
+}
+#messages {
+  float: right;
+  background-color: #E2C8D7;
+  margin: 0 auto;
+  border: solid 1px black;
+  vertical-align: top;
+}
+#messages ul { 
+  list-style-type: none;
+  margin: 0 auto;
+  text-align: center;
+}
+li.text-center {
+  text-align: center;
+}
+#username {
+  font-size: 20px;
+}
+.comment-form {
+  vertical-align: top;
+}
+#logo-image img{
+  border-radius: 10%;
 }
 

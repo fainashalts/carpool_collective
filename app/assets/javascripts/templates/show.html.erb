@@ -1,15 +1,15 @@
-<h1>Your Carpool Collective Carpool!</h1>
-<button id="show-carpool" ng-click="main.Carpool.viewCarpool()">View Details</button></br>
+<h1 id="view">Your Carpool Collective Carpool!</h1>
+
 
 
 
 <div ng-show="main.Carpool.currentCarpool.origin_address" class="text-center">
-  <div class="panel panel-default carpool-search">
+  <div id="carpool-show" class="col-md-4 panel panel-default carpool-search">
     <h1><strong>{{main.Carpool.currentCarpool.name}}</strong></h1>
     <h2>{{main.Carpool.currentCarpool.time}}</h2>
     <h3 ng-show="main.Carpool.currentCarpool.origin_address">Leaving From: {{main.Carpool.currentCarpool.origin_address}}</h3>
     <h3 ng-show="main.Carpool.currentCarpool.origin_address">Going to: {{main.Carpool.currentCarpool.destination_address}}</h3>
-    <h2 ng-show="main.Carpool.currentCarpool.origin_address"><strong>Users in This Carpool<strong></h2>
+    <h2 ng-show="main.Carpool.currentCarpool.origin_address"><strong>Carpoolers<strong></h2>
     <div ng-repeat="user in main.Carpool.currentCarpool.users">
 
       <h3>Name: {{user.name}}</h3>
@@ -20,16 +20,15 @@
 
 
 
-<div>
+<div id="messages" class="col-md-4">
   <div>
-  <h3>Messages in this Carpool</h3>
+  <h2>Messages in this Carpool</h2>
   <ul ng-repeat="comment in main.Carpool.currentCarpool.comments">
-    <li>{{comment.username}}--{{comment.message}}</li>
+    <li class="text-left"><strong id="username">{{comment.username}}</strong>--{{comment.message}}</li>
   </ul>
   <!-- <button ng-click="main.Comment.getComments()">Refresh Comments</button> -->
 <!--   <div ng-if="main.Comment.getComments"
   </div> -->
-
   <form ng-submit="main.Comment.create(main.Comment.username, main.Comment.message)">
     <input type="text" ng-model="main.Comment.username" placeholder="username">
     <input type="text" ng-model= "main.Comment.message" placeholder="your message">
@@ -37,5 +36,10 @@
   </form>
 </div>
 </div>
-
-<embed src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d423261.8846392071!2d-118.07252961914058!3d34.02505171800968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1425945387619" width="600" height="450" frameborder="0" style="border:0"></embed>
+<div class="container">
+  <div class="row">
+    <div>
+      <embed id="google-map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d423261.8846392071!2d-118.07252961914058!3d34.02505171800968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1425945387619" width="600" height="450" frameborder="0" style="border:0"></embed>
+    </div>
+  </div>
+</div>

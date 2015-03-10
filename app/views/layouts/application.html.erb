@@ -30,12 +30,12 @@
 <%#end%>
 
 
-<div id="nav-bar" class="container" role="navigation">
+<div ng-controller="AuthenticationController as auth" id="nav-bar" class="container" role="navigation">
   <ul class="nav nav-pills nav-stacked span2">
   <li role="presentation" class="hue"><a href="#/">Home</a></li>
   <li role="presentation" class="hue"><a href="#/profile">Profile</a></li>
   <li role="presentation" class="hue" ng-if="auth.isAuthenticated" ng-click="auth.logout()"><a href="#/">Logout</a></li>
-  <button ng-style="{'color': '#CB87AF', 'background-color': '#651142'}" ng-if="auth.isAuthenticated" ng-click="auth.logout()">Log Out</button>
+ <!--  <button ng-style="{'color': '#CB87AF', 'background-color': '#651142'}" ng-if="auth.isAuthenticated" ng-click="auth.logout()">Log Out</button> -->
   </ul>
 <!-- <span class="glyphicon glyphicon-home btn-success btn-lg"><a href="#/"></a></span>
 <span class="glyphicon glyphicon-user btn btn-success btn-lg"><a href="#/profile"></a></span> -->

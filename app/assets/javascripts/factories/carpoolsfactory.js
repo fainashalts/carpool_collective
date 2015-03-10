@@ -29,6 +29,7 @@
           carpool.destination_address='';
           self.data = data;
           // return data;
+          console.log(data)
 
 
         }).$promise.catch(function(response){
@@ -49,6 +50,11 @@
         $http.post("/api/carpools/" + id + "/add", {access_token: window.sessionStorage.access_token})
 
       };
+
+      self.removeUser = function(id){
+        console.log("removing user");
+        $http.post("/api/carpools/" + id + "/delete", {access_token: window.sessionStorage.access_token})
+      }
       // end add a user to carpools
 
       // self.currentCarpool = function(id){
@@ -149,7 +155,8 @@
       //   });
       // };
 
-      window.onload = self.viewCarpool;
+      // window.onload = self.viewCarpool;
+      
 
       self.create = function(name, origin_address, destination_address) {
 
@@ -167,6 +174,8 @@
           // carpool.time = '';
           document.getElementById('saved').innerHTML= 'Your carpool was successfully saved! It can be seen in your profile!'
           self.saved = saved;
+          $location.path();
+          $location.path('/profile');
           
         }).$promise.catch(function(response){
           // this fires on error

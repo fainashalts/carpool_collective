@@ -8,6 +8,6 @@
   <h3>{{carpool.name}}</h3>
   <h3>{{carpool.time}}</h3>
   <button><a href="#/view/{{carpool.id}}">View This Carpool</a></button>
-  <button><a href="#">Leave this carpool</button></a>
+  <button ng-click="main.Carpool.removeUser(carpool.id)"><a href="#/">Leave this carpool</button></a>
 </div>
 </div

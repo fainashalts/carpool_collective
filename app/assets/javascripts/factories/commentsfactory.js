@@ -42,6 +42,8 @@
         })
 
       }
+
+
       self.create = function(carpool_id, username, message) {
         
         var url = $location.$$absUrl.split('/');
@@ -56,20 +58,14 @@
 
         self.username = "";
         self.message = "";
+        self.getComments();
 
 
-        // CommentResource.save(comment, function(data, headers, status){
-        //   comment.carpool_id = '';
-        //   comment.username = '';
-        //   comment.message = '';
-        // }).$promise.catch(function(response){
-        //   if(response.status !== 201) {
-        //     self.commentError = true;
-        //     console.log(response);
-        //   }
-        // });
-    };  
+    }; 
+
+
   };
+
   return Comments;
 }
 
