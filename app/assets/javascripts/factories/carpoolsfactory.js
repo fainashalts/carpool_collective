@@ -149,6 +149,8 @@
       //   });
       // };
 
+      window.onload = self.viewCarpool;
+
       self.create = function(name, origin_address, destination_address) {
 
   
