@@ -13,7 +13,7 @@ module Api
           status: 422
       end
     end  
-# define signout to destroy the api_key; destroy action could send a delete request with the logout button on angular side
+
   end #end class
 
 end #end module

@@ -6,7 +6,7 @@ module Api
     before_action :restrict_access
 
     def index
-      # user = User.find_by_access_token(params[:access_token])
+     
       if params[:origin_address]
         carpools= Carpool.locations(params[:origin_address], params[:destination_address])
       else
@@ -16,13 +16,13 @@ module Api
     end
 
     def show
-      # user = User.find_by_access_token(params[:access_token])
+     
       carpool = Carpool.find(params[:id])
       respond_with carpool
     end
 
     def get_carpool
-      # user = User.find_by_access_token(params[:access_token])
+     
       carpool = Carpool.find(params[:id])
       render json: carpool
     end
